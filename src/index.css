@@ -1,13 +1,845 @@
+@font-face {
+  font-family: 'SK-Modernist-Mono';
+  src: url("fonts/Sk-Modernist-Mono.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'SK-Modernist-Bold';
+  src: url("fonts/Sk-Modernist-Bold.otf") format("opentype");
+}
+
+
+@font-face {
+  font-family: 'Halyard Display Book';
+  font-weight: normal;
+  src: url("fonts/Halyard-Display-Book.ttf") format("truetype");
+ 
+}
+
+@font-face {
+  font-family: 'Halyard Display';
+  font-weight: lighter;
+  src: url("fonts/Halyard\ Text\ Regular.ttf") format("truetype");
+ 
+}
+
+h1, p{
+  margin: 0;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #e2e2e2;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/*landing page*/
+.landingpage{
+  background-image: url("../public/images/landingpage.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  
+  align-items: center;
+}
+
+.redbox{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  background-color:rgba(189,64,56,0.5);
+}
+
+.textwrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+.textwrapper h1{
+  font-family: Roboto Slab, serif;
+  color: white;
+  font-size: 70px;
+  margin-bottom: -20px;
+}
+
+.textwrapper h2{
+  font-family: 'Halyard Display Book';
+  color: white;
+  font-size: 30px;
+  
+}
+
+.socialmedia{
+  width: 70%;
+  display: flex;
+ justify-content: center;
+}
+
+.socialmedia img{
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+  width: 48px;
+  height: 48px;
+}
+
+.fadein{
+  animation: fadeinanimation 1s;
+}
+
+.fade-in{
+  overflow-y: hidden;
+    opacity: 0;
+    position: relative;
+    transform: translateY(50px);
+    transition: all 1.5s ease;
+}
+
+.fade-in.appear{
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+@keyframes fadeinanimation{
+  0% {overflow-y: hidden;
+    opacity: 0;
+    position: relative;
+    transform: translateX(-50px);
+    animation: fadeinanimation 1s;
+    transition: all 1s ease;}
+  100%{
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1180px){
+  .redbox h1{
+    font-size: 30px;
+  }
+
+  .redbox h2{
+    font-size: 20px;
+  }
+
+  .redbox{
+    padding-left: 20px;
+  }
+
+  .landingpage{
+    background-image: url("../public/images/landingpagemobile.png");
+  }
+
+  .socialmedia img{
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* about me part*/
+.aboutme, .myskills, .myprojects, .contact, .connectinggrounds2{
+  margin-top: 40px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 80px;
+}
+
+@media only screen and (max-width: 1180px){
+  .aboutme, .myskills, .myprojects, .contact{
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+}
+
+
+.title{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+
+.title p{
+  font-weight: normal;
+  font-family: 'Sk-Modernist-Bold';
+  text-align:center;
+  font-size: 5vw;
+  padding-bottom: 10px;
+}
+
+hr{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 6px;
+  background-color: #bd4038;
+  border: none;
+}
+
+.red{
+  color: #bd4038;
+}
+
+.textandimage{
+  padding-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.left, .right{
+  width: 50%;
+}
+
+.left p{
+  padding-bottom: 4%;
+  font-family: "Halyard Display Book";
+  font-size: 30px;
+}
+
+.left a{
+  color: #bd4038;
+}
+
+.right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.right .aboutmeimage{
+  max-width: 50%;
+}
+
+.right .socialmedia img{
+  max-width: 50%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+@media only screen and (max-width: 1180px){
+  hr{
+    height: 3px;
+  }
+
+  .title p{
+    padding-top: 3vh;
+    font-size: 30px;
+    padding-bottom: 2px;
+  }
+
+  hr{
+    width: 70%;
+  }
+
+  .textandimage{
+    padding-top: 20px;
+    flex-direction: column;
+  }
+
+  .left, .right{
+    width: 100%;
+  }
+
+  .left p{
+    font-size: 20px;
+  }
+
+  .right{
+    padding-top: 20px;
+  }
+}
+
+/*my skills part of the page*/
+.myskills img{
+  width: 80px;
+}
+
+.softskills{
+  width: 100%;
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.softskillcontainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.skilltitle{
+  padding-top: 5px;
+  font-family: "Halyard Display Book";
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.skilldescription{
+  padding-top: 5px;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Halyard Display Book";
+}
+
+@media only screen and (max-width: 1180px){
+  .myskills{
+    padding-top: 30px;
+  }
+
+  .softskills{
+    flex-wrap: wrap;
+    padding-top: 20px;
+  }
+
+  .softskillcontainer img{
+    width: 40px;
+  }
+
+  .softskillcontainer{
+    width: 50%;
+    padding-bottom: 30px;
+  }
+
+  .skilltitle{
+    font-size: 20px;
+  }
+
+  .skilldescription{
+    font-size: 12px;
+    width: 90%;
+  }
+
+ 
+}
+
+.progresbars{
+  padding-top: 40px;
+  
+}
+
+.progresbars .skillbar-title span{
+  font-family: "Halyard Display Book";
+  text-align: center;
+}
+
+.progresbars .skillbar-percent{
+  color: #0b0b0b;
+  font-family: "Sk-Modernist-Mono";
+}
+
+.progresbars .skillbar{
+  background-color: #c0c0c0;
+}
+
+/*my projectspart*/
+
+.projectpost{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+ 
+  
+}
+
+.imageleft{
+  width: 30%;
+}
+
+.imageleft img{
+  width: 405px;
+}
+
+.textright{
+  width: 50%;
+}
+
+#grundfosL{
+  display: none;
+}
+
+.projectpost{
+  padding-top: 70px;
+}
+
+.projecttitle{
+  color: #bd4038;
+  font-size: 25px;
+  font-family: "Sk-Modernist-Bold";
+  padding-bottom: 15px;
+}
+
+.projectdescription{
+  font-family: "Halyard Display Book";
+  font-size: 20px;
+}
+
+.buttonandlink{
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+}
+
+.buttonandlink button{
+    font-family:'Halyard Display';
+    color:white;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-style: none;
+    background-color:#bd4038 ;
+    width: 20%;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
+.buttonandlink button:hover{
+    color:#bd4038;
+    background-color:white;
+    border-style: solid;
+    border-color: #bd4038;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.buttonandlink img{
+  width: 20px;
+  height: 20px;
+}
+
+@media only screen and (max-width: 1180px){
+  .projectpost{
+    padding-top: 30px;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+  }
+
+  .imageleft{
+    width: 100%;
+  }
+
+  .imageleft img{
+    width:inherit;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .textright{
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+
+  .buttonandlink button{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 70%;
+  }
+
+}
+
+/*contact me part*/
+.contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  padding-bottom: 60px;
+}
+
+.contact .contacttext{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  font-size: 30px;
+  text-align: center;
+  font-family: "Halyard Display Book";
+}
+
+.contact a{
+  padding-top: 30px;
+}
+
+.contact button{
+  font-family:'Halyard Display';
+    color:white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-style: none;
+    background-color:#bd4038 ;
+    border-radius: 30px;
+    font-size: 25px;
+}
+
+.contact button:hover{
+  color:#bd4038;
+  background-color:white;
+  border-style: solid;
+  border-color: #bd4038;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+@media only screen and (max-width: 1180px){
+  .contact .contacttext{
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .contact button{
+    font-size: 15px;
+  }
+}
+
+/*footer*/
+footer{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #bd4038;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+footer .footericons {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+
+footer img{
+  width: 24px;
+}
+
+footer p{
+  font-family: "Halyard Display Book";
+  padding-top: 20px;
+  color: white;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1180px){
+  footer p{
+    font-size: 10px
+  }
+
+  footer .footericons{
+    width: 30%;
+  }
+
+  footer .footericons img{
+    width: 15px;
+  }
+}
+
+
+/*navigation 2*/
+
+header {
+  font-family: "Halyard Display Book";
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 70px;
+	padding: 0 2rem;
+	background-color: #bd4038;
+	color: white;
+}
+
+header img{
+  width: 100px;
+}
+
+nav a {
+	margin: 0 1rem;
+	color: var(--textColor);
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: var(--secondaryColor);
+}
+
+header .nav-btn {
+	padding: 5px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--textColor);
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
+}
+
+header div,
+nav {
+	display: flex;
+	align-items: center;
+  align-content: center;
+}
+
+nav{
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 1024px) {
+	header .nav-btn {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	header nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: #bd4038;
+		transition: 1s;
+		transform: translateY(-100vh);
+	}
+
+	header .responsive_nav {
+		transform: none;
+	}
+
+	nav .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+
+	nav a {
+		font-size: 1.5rem;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+
+.leftnav{
+  width: 65%;
+}
+
+nav{
+  width: 35%;
+}
+
+}
+
+/*image slider*/
+.carousel .slider-wrapper{
+  width: 70%;
+}
+
+.connectinggrounds2 .carousel .control-dots .dot{
+  background:#bd4038;
+}
+
+.connectinggrounds2 .carousel.carousel-slider .control-arrow:hover{
+  background-color: rgba(226,226,226,0.5);
+}
+
+.slidecontainer img{
+height: 100%;
+}
+
+.connectinggrounds2 .carousel .slide .legend{
+  background: #bd4038;
+  font-family: "Halyard Display Book";
+}
+
+.connectinggrounds2 .carousel .control-prev.control-arrow:before{
+  border-right: 8px solid #bd4038;
+}
+
+.connectinggrounds2 .carousel .control-next.control-arrow:before{
+  border-left: 8px solid #bd4038;
+}
+
+@media only screen and (max-width: 1180px){
+  .legend{
+    display: none;
+  }
+}
+
+/*connectinggrounds*/
+.connectinggrounds hr{
+  width: 100%;
+}
+
+.mycarousel{
+  padding-top: 30px;
+}
+
+
+.titlesandhr p{
+  font-size: 50px;
+  font-family: "Sk-Modernist-Bold";
+  text-decoration: underline;
+  text-decoration-color: #bd4038;
+  
+}
+
+.titlesandhr{
+  margin-top: 80px;
+}
+
+.projecttext{
+  padding-top: 20px;
+  font-size: 30px;
+  font-family: "Halyard Display Book";
+}
+
+ul{
+  font-size: 30px;
+  font-family: "Halyard Display Book";
+}
+
+.tools{
+  padding-top: 30px;
+  display: flex;
+}
+
+.tools img{
+  width: 70px;
+  padding-right: 50px;
+}
+
+.endbuttons{
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.visit{
+  font-family:'Halyard Display';
+    color:white;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-style: none;
+    background-color:#bd4038 ;
+    border-radius: 30px;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.visit:hover{
+  color:#bd4038;
+  background-color:white;
+  border-style: solid;
+  border-color: #bd4038;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.back{
+  font-family:'Halyard Display';
+  color:black;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: solid;
+  border-color: #bd4038;
+  background-color:#e2e2e2 ;
+  border-radius: 30px;
+  font-size: 20px;
+}
+
+.back:hover{
+  color:white;
+  background-color:#bd4038;
+  border-style: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+@media only screen and (max-width: 1180px){
+  .tools img{
+    width: 35px;
+    padding-bottom: 20px;
+  }
+
+  .titlesandhr p{
+    font-size: 30px;
+  }
+
+  .projecttext{
+    font-size: 20px;
+  }
+
+  ul{
+    font-size: 20px;
+  }
+
+  .tools{
+    flex-wrap: wrap;
+  }
+
+  .visit, .back{
+    font-size: 15px;
+  }
+
+}
+
+.readbutton{
+  width: 100%;
+}
+
+
+header .responsive_nav {
+    z-index: 3;
+}
+
+.connectinggrounds2 .carousel .slider-wrapper{
+  width: 80%;
 }
